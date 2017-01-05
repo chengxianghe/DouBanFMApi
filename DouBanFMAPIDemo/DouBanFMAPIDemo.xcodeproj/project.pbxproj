@@ -1,0 +1,852 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1423F8A61E1DEE9B00148585 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F8A51E1DEE9B00148585 /* main.m */; };
+		1423F8AF1E1DEE9B00148585 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1423F8AD1E1DEE9B00148585 /* Main.storyboard */; };
+		1423F8B11E1DEE9B00148585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1423F8B01E1DEE9B00148585 /* Assets.xcassets */; };
+		1423F8B41E1DEE9B00148585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1423F8B21E1DEE9B00148585 /* LaunchScreen.storyboard */; };
+		1423F9071E1DF2A500148585 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F8F81E1DF2A500148585 /* FXBlurView.m */; };
+		1423F9081E1DF2A500148585 /* KeychainTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F8FB1E1DF2A500148585 /* KeychainTool.m */; };
+		1423F9091E1DF2A500148585 /* DDAudioLRCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F8FE1E1DF2A500148585 /* DDAudioLRCParser.m */; };
+		1423F90A1E1DF2A500148585 /* MusicIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9011E1DF2A500148585 /* MusicIndicator.m */; };
+		1423F90B1E1DF2A500148585 /* NAKPlaybackIndicatorContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9041E1DF2A500148585 /* NAKPlaybackIndicatorContentView.m */; };
+		1423F90C1E1DF2A500148585 /* NAKPlaybackIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9061E1DF2A500148585 /* NAKPlaybackIndicatorView.m */; };
+		1423F9591E1DF82000148585 /* GMBScrollAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9441E1DF82000148585 /* GMBScrollAdView.m */; };
+		1423F95A1E1DF82000148585 /* TUIBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9481E1DF82000148585 /* TUIBButton.m */; };
+		1423F95B1E1DF82000148585 /* TUIBLoopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F94A1E1DF82000148585 /* TUIBLoopButton.m */; };
+		1423F95C1E1DF82000148585 /* IBDesignableOnePixelConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F94D1E1DF82000148585 /* IBDesignableOnePixelConstant.m */; };
+		1423F95D1E1DF82000148585 /* TUIBSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9501E1DF82000148585 /* TUIBSlider.m */; };
+		1423F95E1E1DF82000148585 /* TUCustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9531E1DF82000148585 /* TUCustomSlider.m */; };
+		1423F95F1E1DF82000148585 /* TUDragModalTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9561E1DF82000148585 /* TUDragModalTransition.m */; };
+		1423F9601E1DF82000148585 /* TUScrollPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9581E1DF82000148585 /* TUScrollPanGestureRecognizer.m */; };
+		1423F9A51E1E0BAF00148585 /* TUDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F96A1E1E0BAF00148585 /* TUDefaultCell.m */; };
+		1423F9A61E1E0BAF00148585 /* TUDefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1423F96B1E1E0BAF00148585 /* TUDefaultCell.xib */; };
+		1423F9A71E1E0BAF00148585 /* TUDouBanChannelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F96E1E1E0BAF00148585 /* TUDouBanChannelController.m */; };
+		1423F9A81E1E0BAF00148585 /* TUDouBanChannelListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9701E1E0BAF00148585 /* TUDouBanChannelListController.m */; };
+		1423F9A91E1E0BAF00148585 /* TUDouBanLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9721E1E0BAF00148585 /* TUDouBanLoginController.m */; };
+		1423F9AA1E1E0BAF00148585 /* TUMusicDataMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9741E1E0BAF00148585 /* TUMusicDataMenuController.m */; };
+		1423F9AB1E1E0BAF00148585 /* TUMusicPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9761E1E0BAF00148585 /* TUMusicPlayingController.m */; };
+		1423F9AC1E1E0BAF00148585 /* TUMusicSettingMoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9781E1E0BAF00148585 /* TUMusicSettingMoreController.m */; };
+		1423F9AD1E1E0BAF00148585 /* TUNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F97A1E1E0BAF00148585 /* TUNavigationController.m */; };
+		1423F9AE1E1E0BAF00148585 /* TUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F97C1E1E0BAF00148585 /* TUViewController.m */; };
+		1423F9AF1E1E0BAF00148585 /* TUAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F97F1E1E0BAF00148585 /* TUAnimationHelper.m */; };
+		1423F9B01E1E0BAF00148585 /* TUDouBanDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9811E1E0BAF00148585 /* TUDouBanDataHelper.m */; };
+		1423F9B11E1E0BAF00148585 /* TUMusicHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9831E1E0BAF00148585 /* TUMusicHelper.m */; };
+		1423F9B21E1E0BAF00148585 /* TUMusicLikeRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9851E1E0BAF00148585 /* TUMusicLikeRequestHelper.m */; };
+		1423F9B31E1E0BAF00148585 /* TUMusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9881E1E0BAF00148585 /* TUMusicManager.m */; };
+		1423F9B41E1E0BAF00148585 /* TUUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F98A1E1E0BAF00148585 /* TUUserManager.m */; };
+		1423F9B51E1E0BAF00148585 /* TUDouBanChannelGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F98D1E1E0BAF00148585 /* TUDouBanChannelGroup.m */; };
+		1423F9B61E1E0BAF00148585 /* TUDouBanChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F98F1E1E0BAF00148585 /* TUDouBanChannelModel.m */; };
+		1423F9B71E1E0BAF00148585 /* TUDouBanLyricModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9911E1E0BAF00148585 /* TUDouBanLyricModel.m */; };
+		1423F9B81E1E0BAF00148585 /* TUDouBanMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9931E1E0BAF00148585 /* TUDouBanMusicModel.m */; };
+		1423F9B91E1E0BAF00148585 /* TUDouBanUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9951E1E0BAF00148585 /* TUDouBanUserModel.m */; };
+		1423F9BA1E1E0BAF00148585 /* TUMusicCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9971E1E0BAF00148585 /* TUMusicCategory.m */; };
+		1423F9BB1E1E0BAF00148585 /* TUDBLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F99A1E1E0BAF00148585 /* TUDBLoginRequest.m */; };
+		1423F9BC1E1E0BAF00148585 /* TUDouBanChannelListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F99C1E1E0BAF00148585 /* TUDouBanChannelListRequest.m */; };
+		1423F9BD1E1E0BAF00148585 /* TUDouBanChannelRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F99E1E1E0BAF00148585 /* TUDouBanChannelRequest.m */; };
+		1423F9BE1E1E0BAF00148585 /* TUDouBanLyricRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9A01E1E0BAF00148585 /* TUDouBanLyricRequest.m */; };
+		1423F9BF1E1E0BAF00148585 /* TUDouBanSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9A21E1E0BAF00148585 /* TUDouBanSearchRequest.m */; };
+		1423F9C01E1E0BAF00148585 /* TUDouBanUserChannelRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9A41E1E0BAF00148585 /* TUDouBanUserChannelRequest.m */; };
+		1423F9C51E1E0BCC00148585 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9C21E1E0BCC00148585 /* AppDelegate.m */; };
+		1423F9C61E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9C41E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.m */; };
+		1423F9CA1E1E379900148585 /* TUDouBanRedHeartRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9C91E1E379900148585 /* TUDouBanRedHeartRequest.m */; };
+		C9DD3802FD3441B84A06771C /* libPods-DouBanFMAPIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B483AAAD3AD277440634BEA /* libPods-DouBanFMAPIDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1423F8A11E1DEE9B00148585 /* DouBanFMAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouBanFMAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1423F8A51E1DEE9B00148585 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1423F8AE1E1DEE9B00148585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1423F8B01E1DEE9B00148585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1423F8B31E1DEE9B00148585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1423F8B51E1DEE9B00148585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1423F8F71E1DF2A500148585 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		1423F8F81E1DF2A500148585 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		1423F8FA1E1DF2A500148585 /* KeychainTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainTool.h; sourceTree = "<group>"; };
+		1423F8FB1E1DF2A500148585 /* KeychainTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainTool.m; sourceTree = "<group>"; };
+		1423F8FD1E1DF2A500148585 /* DDAudioLRCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAudioLRCParser.h; sourceTree = "<group>"; };
+		1423F8FE1E1DF2A500148585 /* DDAudioLRCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAudioLRCParser.m; sourceTree = "<group>"; };
+		1423F9001E1DF2A500148585 /* MusicIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicIndicator.h; sourceTree = "<group>"; };
+		1423F9011E1DF2A500148585 /* MusicIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicIndicator.m; sourceTree = "<group>"; };
+		1423F9031E1DF2A500148585 /* NAKPlaybackIndicatorContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAKPlaybackIndicatorContentView.h; sourceTree = "<group>"; };
+		1423F9041E1DF2A500148585 /* NAKPlaybackIndicatorContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAKPlaybackIndicatorContentView.m; sourceTree = "<group>"; };
+		1423F9051E1DF2A500148585 /* NAKPlaybackIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAKPlaybackIndicatorView.h; sourceTree = "<group>"; };
+		1423F9061E1DF2A500148585 /* NAKPlaybackIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAKPlaybackIndicatorView.m; sourceTree = "<group>"; };
+		1423F90E1E1DF33200148585 /* TUNotificationMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUNotificationMacro.h; sourceTree = "<group>"; };
+		1423F90F1E1DF33200148585 /* TUProjetMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUProjetMacro.h; sourceTree = "<group>"; };
+		1423F9101E1DF33200148585 /* TUUIMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUUIMacro.h; sourceTree = "<group>"; };
+		1423F9371E1DF72F00148585 /* DouBanFMAPIDemo-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DouBanFMAPIDemo-PrefixHeader.pch"; sourceTree = "<group>"; };
+		1423F9431E1DF82000148585 /* GMBScrollAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMBScrollAdView.h; sourceTree = "<group>"; };
+		1423F9441E1DF82000148585 /* GMBScrollAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMBScrollAdView.m; sourceTree = "<group>"; };
+		1423F9471E1DF82000148585 /* TUIBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIBButton.h; sourceTree = "<group>"; };
+		1423F9481E1DF82000148585 /* TUIBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIBButton.m; sourceTree = "<group>"; };
+		1423F9491E1DF82000148585 /* TUIBLoopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIBLoopButton.h; sourceTree = "<group>"; };
+		1423F94A1E1DF82000148585 /* TUIBLoopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIBLoopButton.m; sourceTree = "<group>"; };
+		1423F94C1E1DF82000148585 /* IBDesignableOnePixelConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBDesignableOnePixelConstant.h; sourceTree = "<group>"; };
+		1423F94D1E1DF82000148585 /* IBDesignableOnePixelConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBDesignableOnePixelConstant.m; sourceTree = "<group>"; };
+		1423F94F1E1DF82000148585 /* TUIBSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIBSlider.h; sourceTree = "<group>"; };
+		1423F9501E1DF82000148585 /* TUIBSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIBSlider.m; sourceTree = "<group>"; };
+		1423F9521E1DF82000148585 /* TUCustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUCustomSlider.h; sourceTree = "<group>"; };
+		1423F9531E1DF82000148585 /* TUCustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUCustomSlider.m; sourceTree = "<group>"; };
+		1423F9551E1DF82000148585 /* TUDragModalTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDragModalTransition.h; sourceTree = "<group>"; };
+		1423F9561E1DF82000148585 /* TUDragModalTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDragModalTransition.m; sourceTree = "<group>"; };
+		1423F9571E1DF82000148585 /* TUScrollPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUScrollPanGestureRecognizer.h; sourceTree = "<group>"; };
+		1423F9581E1DF82000148585 /* TUScrollPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUScrollPanGestureRecognizer.m; sourceTree = "<group>"; };
+		1423F9691E1E0BAF00148585 /* TUDefaultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDefaultCell.h; sourceTree = "<group>"; };
+		1423F96A1E1E0BAF00148585 /* TUDefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDefaultCell.m; sourceTree = "<group>"; };
+		1423F96B1E1E0BAF00148585 /* TUDefaultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TUDefaultCell.xib; sourceTree = "<group>"; };
+		1423F96D1E1E0BAF00148585 /* TUDouBanChannelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanChannelController.h; sourceTree = "<group>"; };
+		1423F96E1E1E0BAF00148585 /* TUDouBanChannelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanChannelController.m; sourceTree = "<group>"; };
+		1423F96F1E1E0BAF00148585 /* TUDouBanChannelListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanChannelListController.h; sourceTree = "<group>"; };
+		1423F9701E1E0BAF00148585 /* TUDouBanChannelListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanChannelListController.m; sourceTree = "<group>"; };
+		1423F9711E1E0BAF00148585 /* TUDouBanLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanLoginController.h; sourceTree = "<group>"; };
+		1423F9721E1E0BAF00148585 /* TUDouBanLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanLoginController.m; sourceTree = "<group>"; };
+		1423F9731E1E0BAF00148585 /* TUMusicDataMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUMusicDataMenuController.h; sourceTree = "<group>"; };
+		1423F9741E1E0BAF00148585 /* TUMusicDataMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUMusicDataMenuController.m; sourceTree = "<group>"; };
+		1423F9751E1E0BAF00148585 /* TUMusicPlayingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUMusicPlayingController.h; sourceTree = "<group>"; };
+		1423F9761E1E0BAF00148585 /* TUMusicPlayingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUMusicPlayingController.m; sourceTree = "<group>"; };
+		1423F9771E1E0BAF00148585 /* TUMusicSettingMoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUMusicSettingMoreController.h; sourceTree = "<group>"; };
+		1423F9781E1E0BAF00148585 /* TUMusicSettingMoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUMusicSettingMoreController.m; sourceTree = "<group>"; };
+		1423F9791E1E0BAF00148585 /* TUNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUNavigationController.h; sourceTree = "<group>"; };
+		1423F97A1E1E0BAF00148585 /* TUNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUNavigationController.m; sourceTree = "<group>"; };
+		1423F97B1E1E0BAF00148585 /* TUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUViewController.h; sourceTree = "<group>"; };
+		1423F97C1E1E0BAF00148585 /* TUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUViewController.m; sourceTree = "<group>"; };
+		1423F97E1E1E0BAF00148585 /* TUAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUAnimationHelper.h; sourceTree = "<group>"; };
+		1423F97F1E1E0BAF00148585 /* TUAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUAnimationHelper.m; sourceTree = "<group>"; };
+		1423F9801E1E0BAF00148585 /* TUDouBanDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanDataHelper.h; sourceTree = "<group>"; };
+		1423F9811E1E0BAF00148585 /* TUDouBanDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanDataHelper.m; sourceTree = "<group>"; };
+		1423F9821E1E0BAF00148585 /* TUMusicHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUMusicHelper.h; sourceTree = "<group>"; };
+		1423F9831E1E0BAF00148585 /* TUMusicHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUMusicHelper.m; sourceTree = "<group>"; };
+		1423F9841E1E0BAF00148585 /* TUMusicLikeRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUMusicLikeRequestHelper.h; sourceTree = "<group>"; };
+		1423F9851E1E0BAF00148585 /* TUMusicLikeRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUMusicLikeRequestHelper.m; sourceTree = "<group>"; };
+		1423F9871E1E0BAF00148585 /* TUMusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUMusicManager.h; sourceTree = "<group>"; };
+		1423F9881E1E0BAF00148585 /* TUMusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUMusicManager.m; sourceTree = "<group>"; };
+		1423F9891E1E0BAF00148585 /* TUUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUUserManager.h; sourceTree = "<group>"; };
+		1423F98A1E1E0BAF00148585 /* TUUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUUserManager.m; sourceTree = "<group>"; };
+		1423F98C1E1E0BAF00148585 /* TUDouBanChannelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanChannelGroup.h; sourceTree = "<group>"; };
+		1423F98D1E1E0BAF00148585 /* TUDouBanChannelGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanChannelGroup.m; sourceTree = "<group>"; };
+		1423F98E1E1E0BAF00148585 /* TUDouBanChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanChannelModel.h; sourceTree = "<group>"; };
+		1423F98F1E1E0BAF00148585 /* TUDouBanChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanChannelModel.m; sourceTree = "<group>"; };
+		1423F9901E1E0BAF00148585 /* TUDouBanLyricModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanLyricModel.h; sourceTree = "<group>"; };
+		1423F9911E1E0BAF00148585 /* TUDouBanLyricModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanLyricModel.m; sourceTree = "<group>"; };
+		1423F9921E1E0BAF00148585 /* TUDouBanMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanMusicModel.h; sourceTree = "<group>"; };
+		1423F9931E1E0BAF00148585 /* TUDouBanMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanMusicModel.m; sourceTree = "<group>"; };
+		1423F9941E1E0BAF00148585 /* TUDouBanUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanUserModel.h; sourceTree = "<group>"; };
+		1423F9951E1E0BAF00148585 /* TUDouBanUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanUserModel.m; sourceTree = "<group>"; };
+		1423F9961E1E0BAF00148585 /* TUMusicCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUMusicCategory.h; sourceTree = "<group>"; };
+		1423F9971E1E0BAF00148585 /* TUMusicCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUMusicCategory.m; sourceTree = "<group>"; };
+		1423F9991E1E0BAF00148585 /* TUDBLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDBLoginRequest.h; sourceTree = "<group>"; };
+		1423F99A1E1E0BAF00148585 /* TUDBLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDBLoginRequest.m; sourceTree = "<group>"; };
+		1423F99B1E1E0BAF00148585 /* TUDouBanChannelListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanChannelListRequest.h; sourceTree = "<group>"; };
+		1423F99C1E1E0BAF00148585 /* TUDouBanChannelListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanChannelListRequest.m; sourceTree = "<group>"; };
+		1423F99D1E1E0BAF00148585 /* TUDouBanChannelRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanChannelRequest.h; sourceTree = "<group>"; };
+		1423F99E1E1E0BAF00148585 /* TUDouBanChannelRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanChannelRequest.m; sourceTree = "<group>"; };
+		1423F99F1E1E0BAF00148585 /* TUDouBanLyricRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanLyricRequest.h; sourceTree = "<group>"; };
+		1423F9A01E1E0BAF00148585 /* TUDouBanLyricRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanLyricRequest.m; sourceTree = "<group>"; };
+		1423F9A11E1E0BAF00148585 /* TUDouBanSearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanSearchRequest.h; sourceTree = "<group>"; };
+		1423F9A21E1E0BAF00148585 /* TUDouBanSearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanSearchRequest.m; sourceTree = "<group>"; };
+		1423F9A31E1E0BAF00148585 /* TUDouBanUserChannelRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanUserChannelRequest.h; sourceTree = "<group>"; };
+		1423F9A41E1E0BAF00148585 /* TUDouBanUserChannelRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanUserChannelRequest.m; sourceTree = "<group>"; };
+		1423F9C11E1E0BCC00148585 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1423F9C21E1E0BCC00148585 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1423F9C31E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+TUMusicRemoteControl.h"; sourceTree = "<group>"; };
+		1423F9C41E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+TUMusicRemoteControl.m"; sourceTree = "<group>"; };
+		1423F9C81E1E379900148585 /* TUDouBanRedHeartRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanRedHeartRequest.h; sourceTree = "<group>"; };
+		1423F9C91E1E379900148585 /* TUDouBanRedHeartRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanRedHeartRequest.m; sourceTree = "<group>"; };
+		7B483AAAD3AD277440634BEA /* libPods-DouBanFMAPIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DouBanFMAPIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4EA54FBC82100521068E66C /* Pods-DouBanFMAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouBanFMAPIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouBanFMAPIDemo/Pods-DouBanFMAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E532213AC408A04FC2F63CCC /* Pods-DouBanFMAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouBanFMAPIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouBanFMAPIDemo/Pods-DouBanFMAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1423F89E1E1DEE9B00148585 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9DD3802FD3441B84A06771C /* libPods-DouBanFMAPIDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1423F8981E1DEE9B00148585 = {
+			isa = PBXGroup;
+			children = (
+				1423F8A31E1DEE9B00148585 /* DouBanFMAPIDemo */,
+				1423F8A21E1DEE9B00148585 /* Products */,
+				27D8D2EE88D10F02B5076EA1 /* Pods */,
+				8781D8354DBBBE9C5E54927D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1423F8A21E1DEE9B00148585 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1423F8A11E1DEE9B00148585 /* DouBanFMAPIDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1423F8A31E1DEE9B00148585 /* DouBanFMAPIDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9C71E1E0BFA00148585 /* Storyboard */,
+				1423F9411E1DF82000148585 /* TULib */,
+				1423F90D1E1DF33200148585 /* Global */,
+				1423F8F51E1DF2A500148585 /* OpenLib */,
+				1423F9671E1E0BAE00148585 /* Project */,
+				1423F8B01E1DEE9B00148585 /* Assets.xcassets */,
+				1423F8B51E1DEE9B00148585 /* Info.plist */,
+				1423F8A41E1DEE9B00148585 /* Supporting Files */,
+			);
+			path = DouBanFMAPIDemo;
+			sourceTree = "<group>";
+		};
+		1423F8A41E1DEE9B00148585 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9371E1DF72F00148585 /* DouBanFMAPIDemo-PrefixHeader.pch */,
+				1423F8A51E1DEE9B00148585 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1423F8F51E1DF2A500148585 /* OpenLib */ = {
+			isa = PBXGroup;
+			children = (
+				1423F8F61E1DF2A500148585 /* FXBlurView */,
+				1423F8F91E1DF2A500148585 /* KeyChainHelper */,
+				1423F8FC1E1DF2A500148585 /* LyricParse */,
+				1423F8FF1E1DF2A500148585 /* MusicIndicator */,
+			);
+			path = OpenLib;
+			sourceTree = "<group>";
+		};
+		1423F8F61E1DF2A500148585 /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				1423F8F71E1DF2A500148585 /* FXBlurView.h */,
+				1423F8F81E1DF2A500148585 /* FXBlurView.m */,
+			);
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
+		1423F8F91E1DF2A500148585 /* KeyChainHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1423F8FA1E1DF2A500148585 /* KeychainTool.h */,
+				1423F8FB1E1DF2A500148585 /* KeychainTool.m */,
+			);
+			path = KeyChainHelper;
+			sourceTree = "<group>";
+		};
+		1423F8FC1E1DF2A500148585 /* LyricParse */ = {
+			isa = PBXGroup;
+			children = (
+				1423F8FD1E1DF2A500148585 /* DDAudioLRCParser.h */,
+				1423F8FE1E1DF2A500148585 /* DDAudioLRCParser.m */,
+			);
+			path = LyricParse;
+			sourceTree = "<group>";
+		};
+		1423F8FF1E1DF2A500148585 /* MusicIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9001E1DF2A500148585 /* MusicIndicator.h */,
+				1423F9011E1DF2A500148585 /* MusicIndicator.m */,
+				1423F9021E1DF2A500148585 /* NAKPlaybackIndicatorView */,
+			);
+			path = MusicIndicator;
+			sourceTree = "<group>";
+		};
+		1423F9021E1DF2A500148585 /* NAKPlaybackIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9031E1DF2A500148585 /* NAKPlaybackIndicatorContentView.h */,
+				1423F9041E1DF2A500148585 /* NAKPlaybackIndicatorContentView.m */,
+				1423F9051E1DF2A500148585 /* NAKPlaybackIndicatorView.h */,
+				1423F9061E1DF2A500148585 /* NAKPlaybackIndicatorView.m */,
+			);
+			path = NAKPlaybackIndicatorView;
+			sourceTree = "<group>";
+		};
+		1423F90D1E1DF33200148585 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1423F90E1E1DF33200148585 /* TUNotificationMacro.h */,
+				1423F90F1E1DF33200148585 /* TUProjetMacro.h */,
+				1423F9101E1DF33200148585 /* TUUIMacro.h */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		1423F9411E1DF82000148585 /* TULib */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9421E1DF82000148585 /* GMBScrollAdView */,
+				1423F9451E1DF82000148585 /* IBDesignable */,
+				1423F9511E1DF82000148585 /* TUCustomSlider */,
+				1423F9541E1DF82000148585 /* TUDragModalTransition */,
+			);
+			path = TULib;
+			sourceTree = "<group>";
+		};
+		1423F9421E1DF82000148585 /* GMBScrollAdView */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9431E1DF82000148585 /* GMBScrollAdView.h */,
+				1423F9441E1DF82000148585 /* GMBScrollAdView.m */,
+			);
+			path = GMBScrollAdView;
+			sourceTree = "<group>";
+		};
+		1423F9451E1DF82000148585 /* IBDesignable */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9461E1DF82000148585 /* TUButton */,
+				1423F94B1E1DF82000148585 /* TUConstant */,
+				1423F94E1E1DF82000148585 /* TUSlider */,
+			);
+			path = IBDesignable;
+			sourceTree = "<group>";
+		};
+		1423F9461E1DF82000148585 /* TUButton */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9471E1DF82000148585 /* TUIBButton.h */,
+				1423F9481E1DF82000148585 /* TUIBButton.m */,
+				1423F9491E1DF82000148585 /* TUIBLoopButton.h */,
+				1423F94A1E1DF82000148585 /* TUIBLoopButton.m */,
+			);
+			path = TUButton;
+			sourceTree = "<group>";
+		};
+		1423F94B1E1DF82000148585 /* TUConstant */ = {
+			isa = PBXGroup;
+			children = (
+				1423F94C1E1DF82000148585 /* IBDesignableOnePixelConstant.h */,
+				1423F94D1E1DF82000148585 /* IBDesignableOnePixelConstant.m */,
+			);
+			path = TUConstant;
+			sourceTree = "<group>";
+		};
+		1423F94E1E1DF82000148585 /* TUSlider */ = {
+			isa = PBXGroup;
+			children = (
+				1423F94F1E1DF82000148585 /* TUIBSlider.h */,
+				1423F9501E1DF82000148585 /* TUIBSlider.m */,
+			);
+			path = TUSlider;
+			sourceTree = "<group>";
+		};
+		1423F9511E1DF82000148585 /* TUCustomSlider */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9521E1DF82000148585 /* TUCustomSlider.h */,
+				1423F9531E1DF82000148585 /* TUCustomSlider.m */,
+			);
+			path = TUCustomSlider;
+			sourceTree = "<group>";
+		};
+		1423F9541E1DF82000148585 /* TUDragModalTransition */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9551E1DF82000148585 /* TUDragModalTransition.h */,
+				1423F9561E1DF82000148585 /* TUDragModalTransition.m */,
+				1423F9571E1DF82000148585 /* TUScrollPanGestureRecognizer.h */,
+				1423F9581E1DF82000148585 /* TUScrollPanGestureRecognizer.m */,
+			);
+			path = TUDragModalTransition;
+			sourceTree = "<group>";
+		};
+		1423F9671E1E0BAE00148585 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9C11E1E0BCC00148585 /* AppDelegate.h */,
+				1423F9C21E1E0BCC00148585 /* AppDelegate.m */,
+				1423F9C31E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.h */,
+				1423F9C41E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.m */,
+				1423F97D1E1E0BAF00148585 /* Helper */,
+				1423F9861E1E0BAF00148585 /* Manager */,
+				1423F98B1E1E0BAF00148585 /* Model */,
+				1423F9981E1E0BAF00148585 /* Request */,
+				1423F9681E1E0BAF00148585 /* Cell */,
+				1423F96C1E1E0BAF00148585 /* Controller */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		1423F9681E1E0BAF00148585 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9691E1E0BAF00148585 /* TUDefaultCell.h */,
+				1423F96A1E1E0BAF00148585 /* TUDefaultCell.m */,
+				1423F96B1E1E0BAF00148585 /* TUDefaultCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1423F96C1E1E0BAF00148585 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9791E1E0BAF00148585 /* TUNavigationController.h */,
+				1423F97A1E1E0BAF00148585 /* TUNavigationController.m */,
+				1423F97B1E1E0BAF00148585 /* TUViewController.h */,
+				1423F97C1E1E0BAF00148585 /* TUViewController.m */,
+				1423F9711E1E0BAF00148585 /* TUDouBanLoginController.h */,
+				1423F9721E1E0BAF00148585 /* TUDouBanLoginController.m */,
+				1423F96F1E1E0BAF00148585 /* TUDouBanChannelListController.h */,
+				1423F9701E1E0BAF00148585 /* TUDouBanChannelListController.m */,
+				1423F96D1E1E0BAF00148585 /* TUDouBanChannelController.h */,
+				1423F96E1E1E0BAF00148585 /* TUDouBanChannelController.m */,
+				1423F9731E1E0BAF00148585 /* TUMusicDataMenuController.h */,
+				1423F9741E1E0BAF00148585 /* TUMusicDataMenuController.m */,
+				1423F9751E1E0BAF00148585 /* TUMusicPlayingController.h */,
+				1423F9761E1E0BAF00148585 /* TUMusicPlayingController.m */,
+				1423F9771E1E0BAF00148585 /* TUMusicSettingMoreController.h */,
+				1423F9781E1E0BAF00148585 /* TUMusicSettingMoreController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1423F97D1E1E0BAF00148585 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1423F97E1E1E0BAF00148585 /* TUAnimationHelper.h */,
+				1423F97F1E1E0BAF00148585 /* TUAnimationHelper.m */,
+				1423F9801E1E0BAF00148585 /* TUDouBanDataHelper.h */,
+				1423F9811E1E0BAF00148585 /* TUDouBanDataHelper.m */,
+				1423F9821E1E0BAF00148585 /* TUMusicHelper.h */,
+				1423F9831E1E0BAF00148585 /* TUMusicHelper.m */,
+				1423F9841E1E0BAF00148585 /* TUMusicLikeRequestHelper.h */,
+				1423F9851E1E0BAF00148585 /* TUMusicLikeRequestHelper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		1423F9861E1E0BAF00148585 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9871E1E0BAF00148585 /* TUMusicManager.h */,
+				1423F9881E1E0BAF00148585 /* TUMusicManager.m */,
+				1423F9891E1E0BAF00148585 /* TUUserManager.h */,
+				1423F98A1E1E0BAF00148585 /* TUUserManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1423F98B1E1E0BAF00148585 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1423F98C1E1E0BAF00148585 /* TUDouBanChannelGroup.h */,
+				1423F98D1E1E0BAF00148585 /* TUDouBanChannelGroup.m */,
+				1423F98E1E1E0BAF00148585 /* TUDouBanChannelModel.h */,
+				1423F98F1E1E0BAF00148585 /* TUDouBanChannelModel.m */,
+				1423F9901E1E0BAF00148585 /* TUDouBanLyricModel.h */,
+				1423F9911E1E0BAF00148585 /* TUDouBanLyricModel.m */,
+				1423F9921E1E0BAF00148585 /* TUDouBanMusicModel.h */,
+				1423F9931E1E0BAF00148585 /* TUDouBanMusicModel.m */,
+				1423F9941E1E0BAF00148585 /* TUDouBanUserModel.h */,
+				1423F9951E1E0BAF00148585 /* TUDouBanUserModel.m */,
+				1423F9961E1E0BAF00148585 /* TUMusicCategory.h */,
+				1423F9971E1E0BAF00148585 /* TUMusicCategory.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1423F9981E1E0BAF00148585 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				1423F9991E1E0BAF00148585 /* TUDBLoginRequest.h */,
+				1423F99A1E1E0BAF00148585 /* TUDBLoginRequest.m */,
+				1423F99B1E1E0BAF00148585 /* TUDouBanChannelListRequest.h */,
+				1423F99C1E1E0BAF00148585 /* TUDouBanChannelListRequest.m */,
+				1423F99D1E1E0BAF00148585 /* TUDouBanChannelRequest.h */,
+				1423F99E1E1E0BAF00148585 /* TUDouBanChannelRequest.m */,
+				1423F99F1E1E0BAF00148585 /* TUDouBanLyricRequest.h */,
+				1423F9A01E1E0BAF00148585 /* TUDouBanLyricRequest.m */,
+				1423F9A11E1E0BAF00148585 /* TUDouBanSearchRequest.h */,
+				1423F9A21E1E0BAF00148585 /* TUDouBanSearchRequest.m */,
+				1423F9A31E1E0BAF00148585 /* TUDouBanUserChannelRequest.h */,
+				1423F9A41E1E0BAF00148585 /* TUDouBanUserChannelRequest.m */,
+				1423F9C81E1E379900148585 /* TUDouBanRedHeartRequest.h */,
+				1423F9C91E1E379900148585 /* TUDouBanRedHeartRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		1423F9C71E1E0BFA00148585 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1423F8AD1E1DEE9B00148585 /* Main.storyboard */,
+				1423F8B21E1DEE9B00148585 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		27D8D2EE88D10F02B5076EA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4EA54FBC82100521068E66C /* Pods-DouBanFMAPIDemo.debug.xcconfig */,
+				E532213AC408A04FC2F63CCC /* Pods-DouBanFMAPIDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8781D8354DBBBE9C5E54927D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B483AAAD3AD277440634BEA /* libPods-DouBanFMAPIDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1423F8A01E1DEE9B00148585 /* DouBanFMAPIDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1423F8B81E1DEE9B00148585 /* Build configuration list for PBXNativeTarget "DouBanFMAPIDemo" */;
+			buildPhases = (
+				B8BA965EF7EDD17139EB9FA9 /* [CP] Check Pods Manifest.lock */,
+				1423F89D1E1DEE9B00148585 /* Sources */,
+				1423F89E1E1DEE9B00148585 /* Frameworks */,
+				1423F89F1E1DEE9B00148585 /* Resources */,
+				77479624B2B60FF1A5AA3396 /* [CP] Embed Pods Frameworks */,
+				DE92D3573ABF171D30B2B4ED /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DouBanFMAPIDemo;
+			productName = DouBanFMAPIDemo;
+			productReference = 1423F8A11E1DEE9B00148585 /* DouBanFMAPIDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1423F8991E1DEE9B00148585 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = cn;
+				TargetAttributes = {
+					1423F8A01E1DEE9B00148585 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = G3HJ44W84H;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 1423F89C1E1DEE9B00148585 /* Build configuration list for PBXProject "DouBanFMAPIDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1423F8981E1DEE9B00148585;
+			productRefGroup = 1423F8A21E1DEE9B00148585 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1423F8A01E1DEE9B00148585 /* DouBanFMAPIDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1423F89F1E1DEE9B00148585 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1423F9A61E1E0BAF00148585 /* TUDefaultCell.xib in Resources */,
+				1423F8B41E1DEE9B00148585 /* LaunchScreen.storyboard in Resources */,
+				1423F8B11E1DEE9B00148585 /* Assets.xcassets in Resources */,
+				1423F8AF1E1DEE9B00148585 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77479624B2B60FF1A5AA3396 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DouBanFMAPIDemo/Pods-DouBanFMAPIDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8BA965EF7EDD17139EB9FA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE92D3573ABF171D30B2B4ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DouBanFMAPIDemo/Pods-DouBanFMAPIDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1423F89D1E1DEE9B00148585 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1423F9081E1DF2A500148585 /* KeychainTool.m in Sources */,
+				1423F9B61E1E0BAF00148585 /* TUDouBanChannelModel.m in Sources */,
+				1423F9B21E1E0BAF00148585 /* TUMusicLikeRequestHelper.m in Sources */,
+				1423F9A81E1E0BAF00148585 /* TUDouBanChannelListController.m in Sources */,
+				1423F9B51E1E0BAF00148585 /* TUDouBanChannelGroup.m in Sources */,
+				1423F95F1E1DF82000148585 /* TUDragModalTransition.m in Sources */,
+				1423F95C1E1DF82000148585 /* IBDesignableOnePixelConstant.m in Sources */,
+				1423F9A71E1E0BAF00148585 /* TUDouBanChannelController.m in Sources */,
+				1423F9AF1E1E0BAF00148585 /* TUAnimationHelper.m in Sources */,
+				1423F90C1E1DF2A500148585 /* NAKPlaybackIndicatorView.m in Sources */,
+				1423F9CA1E1E379900148585 /* TUDouBanRedHeartRequest.m in Sources */,
+				1423F9B11E1E0BAF00148585 /* TUMusicHelper.m in Sources */,
+				1423F9AC1E1E0BAF00148585 /* TUMusicSettingMoreController.m in Sources */,
+				1423F9601E1DF82000148585 /* TUScrollPanGestureRecognizer.m in Sources */,
+				1423F9B41E1E0BAF00148585 /* TUUserManager.m in Sources */,
+				1423F9091E1DF2A500148585 /* DDAudioLRCParser.m in Sources */,
+				1423F95B1E1DF82000148585 /* TUIBLoopButton.m in Sources */,
+				1423F9AA1E1E0BAF00148585 /* TUMusicDataMenuController.m in Sources */,
+				1423F8A61E1DEE9B00148585 /* main.m in Sources */,
+				1423F9B31E1E0BAF00148585 /* TUMusicManager.m in Sources */,
+				1423F9B01E1E0BAF00148585 /* TUDouBanDataHelper.m in Sources */,
+				1423F9A91E1E0BAF00148585 /* TUDouBanLoginController.m in Sources */,
+				1423F95D1E1DF82000148585 /* TUIBSlider.m in Sources */,
+				1423F95E1E1DF82000148585 /* TUCustomSlider.m in Sources */,
+				1423F9C61E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.m in Sources */,
+				1423F9C51E1E0BCC00148585 /* AppDelegate.m in Sources */,
+				1423F9B71E1E0BAF00148585 /* TUDouBanLyricModel.m in Sources */,
+				1423F9C01E1E0BAF00148585 /* TUDouBanUserChannelRequest.m in Sources */,
+				1423F9BD1E1E0BAF00148585 /* TUDouBanChannelRequest.m in Sources */,
+				1423F9AE1E1E0BAF00148585 /* TUViewController.m in Sources */,
+				1423F95A1E1DF82000148585 /* TUIBButton.m in Sources */,
+				1423F9B91E1E0BAF00148585 /* TUDouBanUserModel.m in Sources */,
+				1423F9591E1DF82000148585 /* GMBScrollAdView.m in Sources */,
+				1423F9A51E1E0BAF00148585 /* TUDefaultCell.m in Sources */,
+				1423F90B1E1DF2A500148585 /* NAKPlaybackIndicatorContentView.m in Sources */,
+				1423F9BE1E1E0BAF00148585 /* TUDouBanLyricRequest.m in Sources */,
+				1423F9BB1E1E0BAF00148585 /* TUDBLoginRequest.m in Sources */,
+				1423F9BA1E1E0BAF00148585 /* TUMusicCategory.m in Sources */,
+				1423F9BF1E1E0BAF00148585 /* TUDouBanSearchRequest.m in Sources */,
+				1423F9B81E1E0BAF00148585 /* TUDouBanMusicModel.m in Sources */,
+				1423F90A1E1DF2A500148585 /* MusicIndicator.m in Sources */,
+				1423F9AD1E1E0BAF00148585 /* TUNavigationController.m in Sources */,
+				1423F9AB1E1E0BAF00148585 /* TUMusicPlayingController.m in Sources */,
+				1423F9071E1DF2A500148585 /* FXBlurView.m in Sources */,
+				1423F9BC1E1E0BAF00148585 /* TUDouBanChannelListRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1423F8AD1E1DEE9B00148585 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1423F8AE1E1DEE9B00148585 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1423F8B21E1DEE9B00148585 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1423F8B31E1DEE9B00148585 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1423F8B61E1DEE9B00148585 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1423F8B71E1DEE9B00148585 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1423F8B91E1DEE9B00148585 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4EA54FBC82100521068E66C /* Pods-DouBanFMAPIDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G3HJ44W84H;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/DouBanFMAPIDemo/DouBanFMAPIDemo-PrefixHeader.pch";
+				INFOPLIST_FILE = DouBanFMAPIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itwu.DouBanFMAPIDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1423F8BA1E1DEE9B00148585 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E532213AC408A04FC2F63CCC /* Pods-DouBanFMAPIDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G3HJ44W84H;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/DouBanFMAPIDemo/DouBanFMAPIDemo-PrefixHeader.pch";
+				INFOPLIST_FILE = DouBanFMAPIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itwu.DouBanFMAPIDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1423F89C1E1DEE9B00148585 /* Build configuration list for PBXProject "DouBanFMAPIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1423F8B61E1DEE9B00148585 /* Debug */,
+				1423F8B71E1DEE9B00148585 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1423F8B81E1DEE9B00148585 /* Build configuration list for PBXNativeTarget "DouBanFMAPIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1423F8B91E1DEE9B00148585 /* Debug */,
+				1423F8BA1E1DEE9B00148585 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1423F8991E1DEE9B00148585 /* Project object */;
+}

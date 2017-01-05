@@ -9,6 +9,9 @@ DouBan FM API 豆瓣FM的API
 
 ===
 
+详细api 待我整理以后贴上来,现在项目里已经集成了 
+频道列表,频道详情,我的红心,登录,取消/添加红心,歌词等接口.
+
 ###有什么问题请issue我
 
 GitHub：[chengxianghe](https://github.com/chengxianghe) 

@@ -14,9 +14,10 @@
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setType:kCATransitionFade];
-    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [animation setRemovedOnCompletion:YES];
-    
+    [animation setFillMode:kCAFillModeBoth];
+
     [view.layer addAnimation:animation forKey:nil];
 }
 

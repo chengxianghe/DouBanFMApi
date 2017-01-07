@@ -25,13 +25,13 @@ GitHub：[chengxianghe](https://github.com/chengxianghe)
 ===
 
 ####目录预览图
-<img src="https://github.com/chengxianghe/watch-gif/blob/master/douban/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-05%20%E4%B8%8B%E5%8D%886.02.36.png?raw=true" width = "200" alt="" align=center />
+<img src="https://github.com/chengxianghe/watch-gif/blob/master/douban/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-05%20%E4%B8%8B%E5%8D%886.02.36.png?raw=true" width = "240" alt="" align=center />
 
 ####播放预览图
-<img src="https://github.com/chengxianghe/watch-gif/blob/master/douban/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-05%20%E4%B8%8B%E5%8D%886.02.54.png?raw=true" width = "200" alt="" align=center />
+<img src="https://github.com/chengxianghe/watch-gif/blob/master/douban/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-05%20%E4%B8%8B%E5%8D%886.02.54.png?raw=true" width = "240" alt="" align=center />
 
 ####歌词预览图
-<img src="https://github.com/chengxianghe/watch-gif/blob/master/douban/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-05%20%E4%B8%8B%E5%8D%886.02.44.png?raw=true" width = "200" alt="" align=center />
+<img src="https://github.com/chengxianghe/watch-gif/blob/master/douban/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-01-05%20%E4%B8%8B%E5%8D%886.02.44.png?raw=true" width = "240" alt="" align=center />
 
 - GIF
 

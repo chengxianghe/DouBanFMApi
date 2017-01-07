@@ -158,7 +158,6 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
 @property (weak, nonatomic) IBOutlet UIImageView *needleImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *needleTopImageView;
 @property (weak, nonatomic) IBOutlet UIView *likeView;
-@property (weak, nonatomic) IBOutlet FXBlurView *blurView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
@@ -201,7 +200,6 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
 @property (assign, nonatomic) BOOL isDraggingVolumeSlider;
 @property (assign, nonatomic) BOOL isAnimating;
 @property (assign, nonatomic) BOOL isViewShowing;
-@property (assign, nonatomic) BOOL isGetingNextSong;
 
 // rotation
 @property (strong, nonatomic) CADisplayLink *rotationDisplaylink;
@@ -313,7 +311,7 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     [self configUI];
     [self configVolumeUI];
     [self configCollectionView];
@@ -373,6 +371,8 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     
     if (self.musicList != nil) {
         self.musicList = musicList;
+        [self.collectionView reloadData];
+
         self.currentIndex = MIN(currentIndex, musicList.count);
         self.currentMusic = musicList[self.currentIndex];
         
@@ -382,12 +382,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     } else {
         self.musicList = musicList;
         self.currentIndex = MIN(currentIndex, musicList.count);
-    }
-}
+        [self.collectionView reloadData];
 
-- (void)setMusicList:(NSMutableArray<__kindof TUDouBanMusicModel *> *)musicList {
-    _musicList = musicList;
-    [self.collectionView reloadData];
+    }
 }
 
 - (void)setCurrentMusic:(TUDouBanMusicModel *)currentMusic {
@@ -398,13 +395,13 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
 //    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(updateBackImage) object:nil];
 //    [self performSelector:@selector(updateBackImage) withObject:nil afterDelay:0.2];
     @weakify(self);
-    [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:currentMusic.picture] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:currentMusic.picture] placeholderImage:nil options:SDWebImageAvoidAutoSetImage|SDWebImageDelayPlaceholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         @strongify(self);
         if (!self) { return; }
+        self.backgroundImageView.image = [image blurredImageWithRadius:10 iterations:2 tintColor:[UIColor blackColor]];
+        [TUAnimationHelper animationFade:self.backgroundImageView duration:0.5];
+        
         currentMusic.image = image;
-        [self.blurView updateAsynchronously:YES completion:^{
-            [TUAnimationHelper animationFade:self.blurView duration:0.5];
-        }];
         [AppDelegate refreshPlayMusicRemoteControlEventsWithModel:currentMusic isPlay:YES];
     }];
     
@@ -1259,19 +1256,17 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     }];
     
     if (![self canPlayNext]) {
-        if (!self.isGetingNextSong) {
-            self.isGetingNextSong = YES;
-            [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:YES competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
-                @strongify(self);
-                if (!self) { return; }
-                self.isGetingNextSong = NO;
-                if (musicList.count && currentIndex < musicList.count) {
-                    self.musicList = musicList;
-                    self.preButton.enabled = [self canPlayPrevious];
-                    self.nextButton.enabled = [self canPlayNext];
-                }
-            }];
-        }
+        [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:YES competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
+            @strongify(self);
+            if (!self) { return; }
+            if (musicList.count && currentIndex < musicList.count) {
+                self.musicList = musicList;
+                [self.collectionView reloadData];
+                
+                self.preButton.enabled = [self canPlayPrevious];
+                self.nextButton.enabled = [self canPlayNext];
+            }
+        }];
     }
 }
 
@@ -1307,6 +1302,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     }
     
     [self stopRotationImage];
+    self.imageView.transform = CGAffineTransformIdentity;
+    self.maskCDImageView.transform = CGAffineTransformIdentity;
+    
     self.playButton.selected = NO;
     
     if (self.loopButton.loopState == TULoopButtonStateOne) {
@@ -1319,17 +1317,13 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         } else {
             // 获取下一个列表
             @weakify(self);
-            if (!self.isGetingNextSong) {
-                self.isGetingNextSong = YES;
-                [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:NO competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
-                    @strongify(self);
-                    if (!self) { return; }
-                    self.isGetingNextSong = NO;
-                    if (musicList.count && currentIndex < musicList.count && ![[TUMusicManager sharedInstance] isPlaying]) {
-                        [self setMusicList:musicList currentIndex:currentIndex];
-                    }
-                }];
-            }
+            [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:NO competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
+                @strongify(self);
+                if (!self) { return; }
+                if (musicList.count && currentIndex < musicList.count && ![[TUMusicManager sharedInstance] isPlaying]) {
+                    [self setMusicList:musicList currentIndex:currentIndex];
+                }
+            }];
         }
     } else {
         // 列表循环
@@ -1344,22 +1338,20 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     }
     NSLog(@"手动切换获取下一曲");
     @weakify(self);
-    if (!self.isGetingNextSong) {
-        self.isGetingNextSong = YES;
-        [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:YES competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
-            @strongify(self);
-            if (!self) { return; }
-            self.isGetingNextSong = NO;
+    [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:YES competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
+        @strongify(self);
+        if (!self) { return; }
+        
+        if (musicList.count && currentIndex < musicList.count && ![[TUMusicManager sharedInstance] isPlaying]) {
+            [self setMusicList:musicList currentIndex:currentIndex];
+        } else if (musicList.count && currentIndex < musicList.count) {
+            self.musicList = musicList;
+            [self.collectionView reloadData];
             
-            if (musicList.count && currentIndex < musicList.count && ![[TUMusicManager sharedInstance] isPlaying]) {
-                [self setMusicList:musicList currentIndex:currentIndex];
-            } else if (musicList.count && currentIndex < musicList.count) {
-                self.musicList = musicList;
-                self.preButton.enabled = [self canPlayPrevious];
-                self.nextButton.enabled = [self canPlayNext];
-            }
-        }];
-    }
+            self.preButton.enabled = [self canPlayPrevious];
+            self.nextButton.enabled = [self canPlayNext];
+        }
+    }];
 }
 
 - (void)playMusicWhenInterruptionBegin:(NSDictionary *)userInfo {

@@ -95,7 +95,7 @@
             if (completion) {
                 completion(self.dataSource, self.dataSource.count - 1);
             }
-            [self refreshPageData:array];
+
         } failur:^(__kindof TUBaseRequest * _Nonnull baseRequest, NSError * _Nonnull error) {
             NSLog(@"%@",error.description);
             if (completion) {
@@ -106,6 +106,9 @@
 }
 
 - (void)refreshPageData:(NSArray *)array {
+    if (array.count == 1 && [array[0] isEqual:self.dataSource.lastObject]) {
+        return;
+    }
     [self.dataSource addObjectsFromArray:array];
 }
 

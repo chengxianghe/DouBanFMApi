@@ -205,16 +205,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lm1-tM-zMM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxS-76-tju" customClass="FXBlurView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="blurRadius" value="30"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dynamic" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cm2_play_disc_mask" translatesAutoresizingMaskIntoConstraints="NO" id="8yN-eu-nzr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
@@ -699,11 +689,9 @@
                             <constraint firstItem="3Th-zQ-k8n" firstAttribute="top" secondItem="Rqz-FQ-ArG" secondAttribute="bottom" constant="10" id="AJA-jM-ktc"/>
                             <constraint firstItem="pWb-cV-Z47" firstAttribute="top" secondItem="Zb9-dk-AkP" secondAttribute="top" id="Ax1-jw-Bty"/>
                             <constraint firstAttribute="trailing" secondItem="c8W-NZ-8Td" secondAttribute="trailing" id="BFK-JA-NE0"/>
-                            <constraint firstItem="JxS-76-tju" firstAttribute="bottom" secondItem="Lm1-tM-zMM" secondAttribute="bottom" id="Da6-Mo-kzJ"/>
                             <constraint firstItem="soc-OW-imr" firstAttribute="top" secondItem="Zb9-dk-AkP" secondAttribute="top" constant="64" id="HWi-L1-09j"/>
                             <constraint firstItem="C1G-A4-Vb9" firstAttribute="leading" secondItem="Zb9-dk-AkP" secondAttribute="leading" id="IAk-gb-mjZ"/>
                             <constraint firstAttribute="trailing" secondItem="C1G-A4-Vb9" secondAttribute="trailing" id="ICv-2K-BCf"/>
-                            <constraint firstItem="JxS-76-tju" firstAttribute="top" secondItem="Lm1-tM-zMM" secondAttribute="top" id="ISg-SK-fp1"/>
                             <constraint firstItem="8yN-eu-nzr" firstAttribute="bottom" secondItem="Lm1-tM-zMM" secondAttribute="bottom" id="LxW-IQ-9c5"/>
                             <constraint firstItem="iDj-uX-whf" firstAttribute="leading" secondItem="Zb9-dk-AkP" secondAttribute="leading" id="MbI-c0-q96"/>
                             <constraint firstItem="soc-OW-imr" firstAttribute="leading" secondItem="Zb9-dk-AkP" secondAttribute="leading" id="PwR-1J-Jvv"/>
@@ -722,9 +710,7 @@
                             <constraint firstAttribute="trailing" secondItem="3Th-zQ-k8n" secondAttribute="trailing" id="epn-Gp-Sc3"/>
                             <constraint firstItem="3Th-zQ-k8n" firstAttribute="leading" secondItem="Zb9-dk-AkP" secondAttribute="leading" id="gYT-gO-lnr"/>
                             <constraint firstAttribute="trailing" secondItem="gn5-OG-1rn" secondAttribute="trailing" id="h0q-2Q-ZW9"/>
-                            <constraint firstItem="JxS-76-tju" firstAttribute="leading" secondItem="Lm1-tM-zMM" secondAttribute="leading" id="mt3-Qz-CbD"/>
                             <constraint firstAttribute="bottom" secondItem="Lm1-tM-zMM" secondAttribute="bottom" id="n3D-Tt-z0V"/>
-                            <constraint firstItem="JxS-76-tju" firstAttribute="trailing" secondItem="Lm1-tM-zMM" secondAttribute="trailing" id="pNY-56-eeQ"/>
                             <constraint firstAttribute="trailing" secondItem="Rqz-FQ-ArG" secondAttribute="trailing" id="u0d-vG-IRj"/>
                             <constraint firstItem="8yN-eu-nzr" firstAttribute="leading" secondItem="Lm1-tM-zMM" secondAttribute="leading" id="uQF-bd-Om9"/>
                             <constraint firstAttribute="trailing" secondItem="Lm1-tM-zMM" secondAttribute="trailing" id="uga-8X-CVh"/>
@@ -739,7 +725,6 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="Lm1-tM-zMM" id="hhS-9y-0yF"/>
                         <outlet property="backgroundView" destination="8yN-eu-nzr" id="hmY-wP-tLB"/>
-                        <outlet property="blurView" destination="JxS-76-tju" id="D7f-0O-WYL"/>
                         <outlet property="cacheProgressView" destination="vaj-sF-IXQ" id="BQb-03-M3b"/>
                         <outlet property="collectionView" destination="C1G-A4-Vb9" id="sYK-RS-ybw"/>
                         <outlet property="commentButton" destination="acS-ns-G9c" id="jKV-CM-6n9"/>
@@ -779,7 +764,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2145" y="672"/>
+            <point key="canvasLocation" x="2364" y="672"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4AZ-Kk-RF4">

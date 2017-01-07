@@ -36,7 +36,7 @@
              @"channel" : _channel_id,
              @"from" : @"mainsite",
              @"pt":@"0.0",
-             @"kps":@"128",
+             @"kbps":@"128",
              @"formats":@"aac",
              
              @"alt":@"json",

@@ -132,9 +132,14 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         @strongify(self);
         if (!self) { return; }
         
-        self.imageView.image = image;
         self.music.image = image;
     }];
+}
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.imageView.transform = CGAffineTransformIdentity;
+    self.maskCDImageView.transform = CGAffineTransformIdentity;
 }
 
 @end
@@ -371,11 +376,12 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     
     if (self.musicList != nil) {
         self.musicList = musicList;
-        [self.collectionView reloadData];
 
         self.currentIndex = MIN(currentIndex, musicList.count);
         self.currentMusic = musicList[self.currentIndex];
         
+        [self.collectionView reloadData];
+
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
         [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
         
@@ -383,7 +389,6 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         self.musicList = musicList;
         self.currentIndex = MIN(currentIndex, musicList.count);
         [self.collectionView reloadData];
-
     }
 }
 
@@ -1140,12 +1145,18 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGAffineTransform imageTransform = CGAffineTransformIdentity;
+    CGAffineTransform maskCDImageTransform = CGAffineTransformIdentity;
+
+    if (_currentIndex == indexPath.item && self.imageView != nil) {
+        imageTransform = self.imageView.transform;
+        maskCDImageTransform = self.maskCDImageView.transform;
+    }
     TUMusicVCCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TUMusicVCCollectionCell" forIndexPath:indexPath];
     [cell setMusic:self.musicList[indexPath.row]];
-    if (self.musicList.count != 2) {
-        // 解决中间转动的image 重置的问题
-        cell.imageView.transform = CGAffineTransformIdentity;
-        cell.maskCDImageView.transform = CGAffineTransformIdentity;
+    if (_currentIndex == indexPath.item) {
+        cell.imageView.transform = imageTransform;
+        cell.maskCDImageView.transform = maskCDImageTransform;
     }
     
     return cell;
@@ -1263,6 +1274,12 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
                 self.musicList = musicList;
                 [self.collectionView reloadData];
                 
+//                TUMusicVCCollectionCell *cell = (TUMusicVCCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
+//                if (self.imageView != cell.imageView) {
+//                    self.imageView = cell.imageView;
+//                    self.maskCDImageView = cell.maskCDImageView;
+//                }
+                
                 self.preButton.enabled = [self canPlayPrevious];
                 self.nextButton.enabled = [self canPlayNext];
             }
@@ -1347,6 +1364,11 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         } else if (musicList.count && currentIndex < musicList.count) {
             self.musicList = musicList;
             [self.collectionView reloadData];
+            TUMusicVCCollectionCell *cell = (TUMusicVCCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
+            if (self.imageView != cell.imageView) {
+                self.imageView = cell.imageView;
+                self.maskCDImageView = cell.maskCDImageView;
+            }
             
             self.preButton.enabled = [self canPlayPrevious];
             self.nextButton.enabled = [self canPlayNext];

@@ -385,6 +385,12 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
         [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
         
+        TUMusicVCCollectionCell *cell = (TUMusicVCCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
+        if (self.imageView != cell.imageView) {
+            self.imageView = cell.imageView;
+            self.maskCDImageView = cell.maskCDImageView;
+        }
+        
     } else {
         self.musicList = musicList;
         self.currentIndex = MIN(currentIndex, musicList.count);
@@ -1266,14 +1272,21 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         NSLog(@"error:%@", error);
     }];
     
-    if (![self canPlayNext]) {
+    // 第一次进入的时候为保证下一首的按钮可以点击 预先请求一次
+    if (![self canPlayNext] && self.musicList.count == 1) {
         [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:YES competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
             @strongify(self);
             if (!self) { return; }
             if (musicList.count && currentIndex < musicList.count) {
-                self.musicList = musicList;
-                [self.collectionView reloadData];
                 
+                NSMutableArray *indexs = [NSMutableArray array];
+                for (NSInteger i = self.musicList.count; i < musicList.count; i ++) {
+                    [indexs addObject:[NSIndexPath indexPathForItem:i inSection:0]];
+                }
+                self.musicList = [NSMutableArray arrayWithArray:musicList];
+                [self.collectionView insertItemsAtIndexPaths:indexs];
+                
+//                [self.collectionView reloadData];
 //                TUMusicVCCollectionCell *cell = (TUMusicVCCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
 //                if (self.imageView != cell.imageView) {
 //                    self.imageView = cell.imageView;
@@ -1312,7 +1325,7 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         self.douBanRequest.sid = self.currentMusic.sid;
         self.douBanRequest.channel_id = [TUDouBanDataHelper sharedInstance].channel.channel_id;
         [self.douBanRequest sendRequestWithSuccess:^(__kindof TUBaseRequest * _Nonnull baseRequest, id  _Nullable responseObject) {
-            NSLog(@"%@", responseObject);
+            NSLog(@"报告豆瓣播放结束%@", responseObject);
         } failur:^(__kindof TUBaseRequest * _Nonnull baseRequest, NSError * _Nonnull error) {
             
         }];
@@ -1321,6 +1334,7 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     [self stopRotationImage];
     self.imageView.transform = CGAffineTransformIdentity;
     self.maskCDImageView.transform = CGAffineTransformIdentity;
+    [self.collectionView reloadData];
     
     self.playButton.selected = NO;
     
@@ -1331,15 +1345,18 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         // 随机循环
         if ([self canPlayNext]) {
             [self onNextButtonClick];
-        } else {
+//        } else {
             // 获取下一个列表
             @weakify(self);
             [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:NO competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
                 @strongify(self);
                 if (!self) { return; }
-                if (musicList.count && currentIndex < musicList.count && ![[TUMusicManager sharedInstance] isPlaying]) {
-                    [self setMusicList:musicList currentIndex:currentIndex];
+                NSMutableArray *indexs = [NSMutableArray array];
+                for (NSInteger i = self.musicList.count; i < musicList.count; i ++) {
+                    [indexs addObject:[NSIndexPath indexPathForItem:i inSection:0]];
                 }
+                self.musicList = [NSMutableArray arrayWithArray:musicList];
+                [self.collectionView insertItemsAtIndexPaths:indexs];
             }];
         }
     } else {
@@ -1362,14 +1379,13 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         if (musicList.count && currentIndex < musicList.count && ![[TUMusicManager sharedInstance] isPlaying]) {
             [self setMusicList:musicList currentIndex:currentIndex];
         } else if (musicList.count && currentIndex < musicList.count) {
-            self.musicList = musicList;
-            [self.collectionView reloadData];
-            TUMusicVCCollectionCell *cell = (TUMusicVCCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
-            if (self.imageView != cell.imageView) {
-                self.imageView = cell.imageView;
-                self.maskCDImageView = cell.maskCDImageView;
+            NSMutableArray *indexs = [NSMutableArray array];
+            for (NSInteger i = self.musicList.count; i < musicList.count; i ++) {
+                [indexs addObject:[NSIndexPath indexPathForItem:i inSection:0]];
             }
-            
+            self.musicList = [NSMutableArray arrayWithArray:musicList];
+            [self.collectionView insertItemsAtIndexPaths:indexs];
+
             self.preButton.enabled = [self canPlayPrevious];
             self.nextButton.enabled = [self canPlayNext];
         }

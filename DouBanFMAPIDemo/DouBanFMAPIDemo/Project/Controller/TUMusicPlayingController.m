@@ -1358,6 +1358,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
                 self.musicList = [NSMutableArray arrayWithArray:musicList];
                 [self.collectionView insertItemsAtIndexPaths:indexs];
             }];
+            
+            self.preButton.enabled = [self canPlayPrevious];
+            self.nextButton.enabled = [self canPlayNext];
         }
     } else {
         // 列表循环

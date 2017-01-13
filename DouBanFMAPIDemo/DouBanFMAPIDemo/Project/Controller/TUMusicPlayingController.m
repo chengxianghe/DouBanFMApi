@@ -1345,7 +1345,7 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         // 随机循环
         if ([self canPlayNext]) {
             [self onNextButtonClick];
-//        } else {
+
             // 获取下一个列表
             @weakify(self);
             [[TUDouBanDataHelper sharedInstance] musicPlayerGetNextSongsWithCurrentMusic:_currentMusic isSkip:NO competion:^(NSMutableArray<__kindof TUDouBanMusicModel *> *musicList, NSUInteger currentIndex) {
@@ -1357,6 +1357,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
                 }
                 self.musicList = [NSMutableArray arrayWithArray:musicList];
                 [self.collectionView insertItemsAtIndexPaths:indexs];
+                
+                self.preButton.enabled = [self canPlayPrevious];
+                self.nextButton.enabled = [self canPlayNext];
             }];
             
             self.preButton.enabled = [self canPlayPrevious];

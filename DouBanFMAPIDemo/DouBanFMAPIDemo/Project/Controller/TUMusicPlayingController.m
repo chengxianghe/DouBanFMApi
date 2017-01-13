@@ -324,9 +324,11 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     [self configEvents];
     [self configNotification];
 
-    self.currentMusic = self.musicList[self.currentIndex];
     
-//    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+        self.currentMusic = self.musicList[self.currentIndex];
+    });
 
     self.lyricSelectedLine = NSNotFound;
     self.lyricRequest = [[TUDouBanLyricRequest alloc] init];
@@ -383,18 +385,20 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         [self.collectionView reloadData];
 
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
-        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
         
-        TUMusicVCCollectionCell *cell = (TUMusicVCCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
-        if (self.imageView != cell.imageView) {
-            self.imageView = cell.imageView;
-            self.maskCDImageView = cell.maskCDImageView;
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+            TUMusicVCCollectionCell *cell = (TUMusicVCCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
+            if (self.imageView != cell.imageView) {
+                self.imageView = cell.imageView;
+                self.maskCDImageView = cell.maskCDImageView;
+            }
+        });
         
     } else {
         self.musicList = musicList;
         self.currentIndex = MIN(currentIndex, musicList.count);
-        [self.collectionView reloadData];
+        //初次进来 控件（UICollectionView）还未创建
     }
 }
 

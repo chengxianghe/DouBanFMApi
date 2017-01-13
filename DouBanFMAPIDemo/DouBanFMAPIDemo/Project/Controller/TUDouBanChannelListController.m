@@ -103,9 +103,12 @@
         // 去登录
         @weakify(self);
         TUDouBanLoginController *vc = [TUDouBanLoginController loginControllerWithSuccess:^{
+            @strongify(self);
+            if (!self) { return; }
+            
             TUDouBanChannelController *vc = [TUDouBanChannelController channelControllerWithChannel:nil];
             vc.isRedHeart = YES;
-            [weak_self.navigationController pushViewController:vc animated:YES];
+            [self.navigationController pushViewController:vc animated:YES];
         } cancel:^{
             
         }];

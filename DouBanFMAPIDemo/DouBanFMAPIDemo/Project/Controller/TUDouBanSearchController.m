@@ -84,6 +84,7 @@
         [self requestDataIsHeaderRefresh:NO];
     }];
     self.tableView.mj_footer = footer;
+    self.tableView.mj_footer.hidden = YES;
 
 }
 
@@ -103,6 +104,7 @@
         if (array.count < 20) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
         } else {
+            self.tableView.mj_footer.hidden = NO;
             [self.tableView.mj_footer endRefreshing];
         }
         

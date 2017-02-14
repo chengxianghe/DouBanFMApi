@@ -865,6 +865,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
             if (!self) { return; }
             
             if (isSuccess && [request.sid isEqualToString:self.currentMusic.sid]) {
+                self.currentMusic.like = YES;
+                [[TUDouBanDataHelper sharedInstance] updateMusicItem:self.currentMusic];
+
                 [AppDelegate refreshPlayMusicRemoteControlEventsWithModel:self.currentMusic isPlay:YES];
                 
                 sender.selected = YES;
@@ -889,6 +892,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
             if (!self) { return; }
             
             if (isSuccess && [request.sid isEqualToString:self.currentMusic.sid]) {
+                self.currentMusic.like = NO;
+                [[TUDouBanDataHelper sharedInstance] updateMusicItem:self.currentMusic];
+                
                 [AppDelegate refreshPlayMusicRemoteControlEventsWithModel:self.currentMusic isPlay:YES];
                 sender.selected = NO;
             }

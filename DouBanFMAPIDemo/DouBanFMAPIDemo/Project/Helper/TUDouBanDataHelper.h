@@ -17,6 +17,8 @@
 
 + (instancetype)sharedInstance;
 
+- (void)updateMusicItem:(TUDouBanMusicModel *)music;
+
 - (void)changeMusicList:(NSArray<__kindof TUDouBanMusicModel *> *)musicList withChannel:(TUDouBanChannelModel *)channel;
 
 - (void)musicPlayerGetNextSongsWithCurrentMusic:(TUDouBanMusicModel *)currentMusic

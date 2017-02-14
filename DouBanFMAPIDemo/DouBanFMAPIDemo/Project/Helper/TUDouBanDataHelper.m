@@ -37,6 +37,15 @@
     return sharedInstance;
 }
 
+- (void)updateMusicItem:(TUDouBanMusicModel *)music {
+    for (TUDouBanMusicModel *temp in self.dataSource) {
+        if (temp.sid == music.sid) {
+            temp.like = music.like;
+            break;
+        }
+    }
+}
+
 - (void)changeMusicList:(NSArray<__kindof TUDouBanMusicModel *> *)musicList withChannel:(TUDouBanChannelModel *)channel {
     [self.dataSource removeAllObjects];
     [self.dataSource addObjectsFromArray:musicList];

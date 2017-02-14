@@ -19,6 +19,7 @@
 #import "MusicIndicator.h"
 #import "TUDouBanDataHelper.h"
 #import "TUMusicPlayingController.h"
+#import "TUDouBanSearchController.h"
 
 @interface TUDouBanChannelListController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -70,12 +71,14 @@
 
     self.navigationItem.leftBarButtonItems = @[loginItem, redHeartItem];
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:[MusicIndicator sharedInstance]];
+    UIBarButtonItem *musicItem = [[UIBarButtonItem alloc] initWithCustomView:[MusicIndicator sharedInstance]];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCurrentPlaying:)];
-    [item.customView addGestureRecognizer:tap];
+    [musicItem.customView addGestureRecognizer:tap];
     
-    self.navigationItem.rightBarButtonItem = item;
+    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(onSearch:)];
+
+    self.navigationItem.rightBarButtonItems = @[musicItem, searchItem];
 }
 
 - (void)onCurrentPlaying:(UITapGestureRecognizer *)sender {
@@ -131,6 +134,10 @@
         NSLog(@"豆瓣登录");
         [self presentViewController:[TUDouBanLoginController loginControllerWithSuccess:nil cancel:nil] animated:YES completion:nil];
     }
+}
+
+- (void)onSearch:(UIBarButtonItem *)sender {
+    [self.navigationController pushViewController:[[TUDouBanSearchController alloc] init] animated:YES];
 }
 
 - (UIAlertController *)alertWithTitle:(NSString *)title message:(NSString *)message doneTitle:(NSString *)doneTitle done:(void(^)())doneBlock cancelTitle:(NSString *)cancelTitle cancel:(void(^)())cancelBlock {

@@ -56,6 +56,8 @@
 		1423F9C51E1E0BCC00148585 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9C21E1E0BCC00148585 /* AppDelegate.m */; };
 		1423F9C61E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9C41E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.m */; };
 		1423F9CA1E1E379900148585 /* TUDouBanRedHeartRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423F9C91E1E379900148585 /* TUDouBanRedHeartRequest.m */; };
+		144F1AA01E52E8A600B7D278 /* TUDouBanSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F1A9F1E52E8A600B7D278 /* TUDouBanSearchController.m */; };
+		144F1AA41E52FAC300B7D278 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F1AA31E52FAC300B7D278 /* UINavigationBar+Awesome.m */; };
 		C9DD3802FD3441B84A06771C /* libPods-DouBanFMAPIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B483AAAD3AD277440634BEA /* libPods-DouBanFMAPIDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +161,10 @@
 		1423F9C41E1E0BCC00148585 /* AppDelegate+TUMusicRemoteControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+TUMusicRemoteControl.m"; sourceTree = "<group>"; };
 		1423F9C81E1E379900148585 /* TUDouBanRedHeartRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanRedHeartRequest.h; sourceTree = "<group>"; };
 		1423F9C91E1E379900148585 /* TUDouBanRedHeartRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanRedHeartRequest.m; sourceTree = "<group>"; };
+		144F1A9E1E52E8A600B7D278 /* TUDouBanSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUDouBanSearchController.h; sourceTree = "<group>"; };
+		144F1A9F1E52E8A600B7D278 /* TUDouBanSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUDouBanSearchController.m; sourceTree = "<group>"; };
+		144F1AA21E52FAC300B7D278 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		144F1AA31E52FAC300B7D278 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		7B483AAAD3AD277440634BEA /* libPods-DouBanFMAPIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DouBanFMAPIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EA54FBC82100521068E66C /* Pods-DouBanFMAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouBanFMAPIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouBanFMAPIDemo/Pods-DouBanFMAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E532213AC408A04FC2F63CCC /* Pods-DouBanFMAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouBanFMAPIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouBanFMAPIDemo/Pods-DouBanFMAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 		1423F8F51E1DF2A500148585 /* OpenLib */ = {
 			isa = PBXGroup;
 			children = (
+				144F1AA11E52FAC300B7D278 /* LTNavigationBarLib */,
 				1423F8F61E1DF2A500148585 /* FXBlurView */,
 				1423F8F91E1DF2A500148585 /* KeyChainHelper */,
 				1423F8FC1E1DF2A500148585 /* LyricParse */,
@@ -412,6 +419,8 @@
 				1423F9761E1E0BAF00148585 /* TUMusicPlayingController.m */,
 				1423F9771E1E0BAF00148585 /* TUMusicSettingMoreController.h */,
 				1423F9781E1E0BAF00148585 /* TUMusicSettingMoreController.m */,
+				144F1A9E1E52E8A600B7D278 /* TUDouBanSearchController.h */,
+				144F1A9F1E52E8A600B7D278 /* TUDouBanSearchController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -489,6 +498,15 @@
 				1423F8B21E1DEE9B00148585 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		144F1AA11E52FAC300B7D278 /* LTNavigationBarLib */ = {
+			isa = PBXGroup;
+			children = (
+				144F1AA21E52FAC300B7D278 /* UINavigationBar+Awesome.h */,
+				144F1AA31E52FAC300B7D278 /* UINavigationBar+Awesome.m */,
+			);
+			path = LTNavigationBarLib;
 			sourceTree = "<group>";
 		};
 		27D8D2EE88D10F02B5076EA1 /* Pods */ = {
@@ -640,6 +658,7 @@
 				1423F9081E1DF2A500148585 /* KeychainTool.m in Sources */,
 				1423F9B61E1E0BAF00148585 /* TUDouBanChannelModel.m in Sources */,
 				1423F9B21E1E0BAF00148585 /* TUMusicLikeRequestHelper.m in Sources */,
+				144F1AA01E52E8A600B7D278 /* TUDouBanSearchController.m in Sources */,
 				1423F9A81E1E0BAF00148585 /* TUDouBanChannelListController.m in Sources */,
 				1423F9B51E1E0BAF00148585 /* TUDouBanChannelGroup.m in Sources */,
 				1423F95F1E1DF82000148585 /* TUDragModalTransition.m in Sources */,
@@ -648,6 +667,7 @@
 				1423F9AF1E1E0BAF00148585 /* TUAnimationHelper.m in Sources */,
 				1423F90C1E1DF2A500148585 /* NAKPlaybackIndicatorView.m in Sources */,
 				1423F9CA1E1E379900148585 /* TUDouBanRedHeartRequest.m in Sources */,
+				144F1AA41E52FAC300B7D278 /* UINavigationBar+Awesome.m in Sources */,
 				1423F9B11E1E0BAF00148585 /* TUMusicHelper.m in Sources */,
 				1423F9AC1E1E0BAF00148585 /* TUMusicSettingMoreController.m in Sources */,
 				1423F9601E1DF82000148585 /* TUScrollPanGestureRecognizer.m in Sources */,

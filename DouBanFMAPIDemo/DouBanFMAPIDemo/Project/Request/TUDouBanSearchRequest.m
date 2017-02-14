@@ -8,8 +8,9 @@
 
 #import "TUDouBanSearchRequest.h"
 
-//  NSString *URL = [NSString stringWithFormat:@"http://api.douban.com/music/subjects?q=321&max-results=30&apikey=058a7fc77af5da75109f7f5670e18f5f",parameter];
-// XML
+// 搜索单曲
+//https://api.douban.com/v2/fm/query/song?alt=json&apikey=02646d3fb69a52ff072d47bf23cef8fd&app_name=radio_iphone&client=s%3Amobile%7Cy%3AiOS%2010.2.1%7Cf%3A116%7Cd%3Ab88146214e19b8a8244c9bc0e2789da68955234d%7Ce%3AiPhone7%2C1%7Cm%3Aappstore&douban_udid=b635779c65b816b13b330b68921c0f8edc049590&limit=20&q=Rr&start=0&udid=b88146214e19b8a8244c9bc0e2789da68955234d&version=116
+
 
 @implementation TUDouBanSearchRequest
 - (TURequestCacheOption)cacheOption {
@@ -21,19 +22,29 @@
 }
 
 - (NSString *)requestUrl {
-    return @"https://douban.fm/j/v2/query/song?";
+    return @"https://api.douban.com/v2/fm/query/song?";
 }
 
 - (NSDictionary *)requestParameters {
-    //q=1&start=0&limit=5
-
+    /*
+     limit=20&q=Rr&start=0
+     */
     if (_searchText == nil) {
         _searchText = @"";
     }
-    return @{
-             @"start" : @"0",
+    
+    return @{@"start" : @(_page),
              @"q" : _searchText,
-             @"limit" : @"5",
+             @"limit" : @"20",
+             
+             @"alt":@"json",
+             @"apikey":@"02646d3fb69a52ff072d47bf23cef8fd",
+             @"app_name":@"radio_iphone",
+             @"client":@"s:mobile|y:iOS 10.2|f:115|d:b88146214e19b8a8244c9bc0e2789da68955234d|e:iPhone7,1|m:appstore",
+             @"douban_udid":@"b635779c65b816b13b330b68921c0f8edc049590",
+             @"icon_cate":@"xlarge",
+             @"udid":@"b88146214e19b8a8244c9bc0e2789da68955234d",
+             @"version":@"115",
              };
 }
 
@@ -67,6 +78,8 @@
  
  @property (nonatomic, strong) NSArray *singers;
  @property (nonatomic, strong) UIImage *image;
+ 
+ @property (nonatomic, assign) BOOL playable;
 
  {
     "items": [
@@ -134,23 +147,24 @@
             "playable": false,
             "channel": "3467638"
         },
-        {
-            "picture": "https://img1.doubanio.com/lpic/s3124228.jpg",
-            "albumtitle": "08拉阔第一场",
-            "artist_name": "陈奕迅 / 方大同",
-            "public_time": "2008",
-            "id": "1466612",
-            "ssid": "a171",
-            "title": "喜欢你",
-            "url": "",
-            "artist": "陈奕迅 / 方大同",
-            "cover": "https://img1.doubanio.com/lpic/s3124228.jpg",
-            "sid": "1466612",
-            "album_title": "08拉阔第一场",
-            "playable": false,
-            "channel": "3466612"
-        }
-    ],
+         {
+         "picture": "http://img7.doubanio.com/lpic/s3941545.jpg",
+         "albumtitle": "EGO",
+         "artist_name": "백지영",
+         "public_time": "2009",
+         "id": "1484065",
+         "ssid": "d962",
+         "title": "내 귀에 캔디 (RRM’s Bitter Candy Mix)",
+         "is_royal": false,
+         "artist": "백지영",
+         "cover": "http://img7.doubanio.com/lpic/s3941545.jpg",
+         "url": "",
+         "sid": "1484065",
+         "album_title": "EGO",
+         "playable": false,
+         "channel": "3484065"
+         }
+         ],
     "total": 1225,
     "type": "song"
 }

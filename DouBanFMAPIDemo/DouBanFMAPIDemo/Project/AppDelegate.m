@@ -15,7 +15,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import "TUMusicPlayingController.h"
 #import "TUUserManager.h"
-#import "TUDouBanSearchRequest.h"
 #import <AFNetworking/AFNetworking.h>
 #import "TUMusicManager.h"
 

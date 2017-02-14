@@ -11,5 +11,6 @@
 @interface TUDouBanSearchRequest : TUBaseRequest
 
 @property (nonatomic, copy) NSString *searchText;
+@property (assign, nonatomic) NSInteger page;
 
 @end

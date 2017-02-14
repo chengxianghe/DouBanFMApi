@@ -145,7 +145,7 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
 @end
 
 
-@interface TUMusicPlayingController () <TUMusicManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate>
+@interface TUMusicPlayingController () <TUMusicManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -272,8 +272,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
         return;
     }
     NSLog(@"viewWillAppear");
-
-    [self.navigationController.view sendSubviewToBack:self.navigationController.navigationBar];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+//    [self.navigationController.view sendSubviewToBack:self.navigationController.navigationBar];
     self.isViewShowing = YES;
 }
 
@@ -295,10 +296,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
     }
     NSLog(@"viewWillDisappear");
 
-    [self.navigationController.view bringSubviewToFront:self.navigationController.navigationBar];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    [self.navigationController.view bringSubviewToFront:self.navigationController.navigationBar];
     self.isViewShowing = NO;
-
-    //    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -315,6 +315,12 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //开启交互手势,我一般是在自定义的导航栏里面设置的,UIGestureRecognizerDelegate
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    }
+    
     // Do any additional setup after loading the view.
 
     [self configUI];
@@ -913,6 +919,9 @@ static CGFloat kDefaultAngle = (M_PI / 360.0f);
 - (IBAction)onSettingCommentButtonClick:(TUIBButton *)sender {
     sender.selected = !sender.selected;
     self.commentCountLabel.hidden = !sender.selected;
+    UIViewController *tempVc = [[UIViewController alloc] init];
+    tempVc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:tempVc animated:YES];
 }
 
 - (IBAction)onSettingMoreButtonClick:(UIButton *)sender {

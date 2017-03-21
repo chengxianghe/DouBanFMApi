@@ -22,6 +22,15 @@
     return TURequestMethodGet;
 }
 
+- (AFSecurityPolicy *)requestSecurityPolicy {
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    securityPolicy.allowInvalidCertificates = YES;
+    
+    [securityPolicy setValidatesDomainName:NO];
+    
+    return securityPolicy;
+}
+
 - (NSString *)requestUrl {
     return @"https://api.douban.com/v2/fm/app_channels";
 }
